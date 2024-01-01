@@ -1,56 +1,67 @@
 from os import getcwd, scandir, rename
 from os.path import splitext, exists, join, expanduser
 
+FOLDERS = [
+            {"file_extension": ".txt", "folder_path": "Documents"},
+            {"file_extension": ".pdf", "folder_path": "Documents"},
+            {"file_extension": ".png", "folder_path": "Pictures"},
+            {"file_extension": ".jpg", "folder_path": "Pictures"},
+            {"file_extension": ".jpeg", "folder_path": "Pictures"},
+            {"file_extension": ".webp", "folder_path": "Pictures"},
+            {"file_extension": ".svg", "folder_path": "Pictures"},
+            {"file_extension": ".tiff", "folder_path": "Pictures"},
+            {"file_extension": ".mp3", "folder_path": "Music"},
+            {"file_extension": ".m4a", "folder_path": "Music"},
+            {"file_extension": ".wav", "folder_path": "Music"},
+            {"file_extension": ".wave", "folder_path": "Music"},
+            {"file_extension": ".flac", "folder_path": "Music"},
+            {"file_extension": ".aac", "folder_path": "Music"},
+            {"file_extension": ".aiff", "folder_path": "Music"},
+            {"file_extension": ".aif", "folder_path": "Music"},
+            {"file_extension": ".aifc", "folder_path": "Music"},
+            {"file_extension": ".au", "folder_path": "Music"},
+            {"file_extension": ".snd", "folder_path": "Music"},
+            {"file_extension": ".l16", "folder_path": "Music"},
+            {"file_extension": ".pcm", "folder_path": "Music"},
+            {"file_extension": ".ape", "folder_path": "Music"},
+            {"file_extension": ".wv", "folder_path": "Music"},
+            {"file_extension": ".wma", "folder_path": "Music"},
+            {"file_extension": ".ogg", "folder_path": "Music"},
+            {"file_extension": ".mpc", "folder_path": "Music"},
+            {"file_extension": ".mp+", "folder_path": "Music"},
+            {"file_extension": ".mpp", "folder_path": "Music"},
+            {"file_extension": ".mp4", "folder_path": "Videos"},
+            {"file_extension": ".m4v", "folder_path": "Videos"},
+            {"file_extension": ".mov", "folder_path": "Videos"},
+            {"file_extension": ".wmv", "folder_path": "Videos"},
+            {"file_extension": ".webm", "folder_path": "Videos"},
+            {"file_extension": ".ogv", "folder_path": "Videos"},
+            {"file_extension": ".gif", "folder_path": "Videos"},
+            {"file_extension": ".gifv", "folder_path": "Videos"},
+            {"file_extension": ".avi", "folder_path": "Videos"},]
 
-def move_files():
-    pass
+SOURCE_DIR = getcwd()
+USER_CURRENT = expanduser("~")
+
+
+def sort_files(file_path, file_name, file_extension):
+    for dictionary in FOLDERS:
+        if file_extension != dictionary["file_extension"]:
+            continue
+
+        file_path_new = join(USER_CURRENT, dictionary["folder_path"])
+        break
+
+    print(file_path, file_name, file_extension, file_path_new, SOURCE_DIR, USER_CURRENT)
 
 
 def main():
-    source_dir = getcwd()
-    user_current = expanduser("~")
-    
-    folders =  [
-                {file_extension: ".txt", file_path: "Documents"},
-                {file_extension: ".pdf", file_path: "Documents"},
-                {file_extension: ".png", file_path: "Pictures"},
-                {file_extension: ".jpg", file_path: "Pictures"},
-                {file_extension: ".jpeg", file_path: "Pictures"},
-                {file_extension: ".webp", file_path: "Pictures"},
-                {file_extension: ".svg", file_path: "Pictures"},
-                {file_extension: ".tiff", file_path: "Pictures"},
-                {file_extension: ".mp3", file_path: "Music"},
-                {file_extension: ".m4a", file_path: "Music"},
-                {file_extension: ".wav", file_path: "Music"},
-                {file_extension: ".wave", file_path: "Music"},
-                {file_extension: ".flac", file_path: "Music"},
-                {file_extension: ".aac", file_path: "Music"},
-                {file_extension: ".aiff", file_path: "Music"},
-                {file_extension: ".aif", file_path: "Music"},
-                {file_extension: ".aifc", file_path: "Music"},
-                {file_extension: ".au", file_path: "Music"},
-                {file_extension: ".snd", file_path: "Music"},
-                {file_extension: ".l16", file_path: "Music"},
-                {file_extension: ".pcm", file_path: "Music"},
-                {file_extension: ".ape", file_path: "Music"},
-                {file_extension: ".wv", file_path: "Music"},
-                {file_extension: ".wma", file_path: "Music"},
-                {file_extension: ".ogg", file_path: "Music"},
-                {file_extension: ".mpc", file_path: "Music"},
-                {file_extension: ".mp+", file_path: "Music"},
-                {file_extension: ".mpp", file_path: "Music"},
-                {file_extension: ".mp4", file_path: "Videos"},
-                {file_extension: ".m4v", file_path: "Videos"},
-                {file_extension: ".mov", file_path: "Videos"},
-                {file_extension: ".wmv", file_path: "Videos"},
-                {file_extension: ".webm", file_path: "Videos"},
-                {file_extension: ".ogv", file_path: "Videos"},
-                {file_extension: ".gif", file_path: "Videos"},
-                {file_extension: ".gifv", file_path: "Videos"},
-                {file_extension: ".avi", file_path: "Videos"},]
+    for file in scandir(SOURCE_DIR):
+        if not file.is_file():
+            continue
 
-    for files in scandir(source_dir):
-        pass
+        file_tuple = splitext(file)
+        sort_files(file_tuple[0], file.name, file_tuple[1])
 
 
 if __name__ == "__main__":
