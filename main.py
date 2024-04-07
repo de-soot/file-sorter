@@ -36,7 +36,7 @@ def sort_files(file_path, file_name, file_extension):
             break
 
     if file_path_new != None:
-        rename(join(file_path, file_name, file_extension), join(file_path_new, file_name, file_extension))
+        rename((file_path + file_extension), join(file_path_new, file_name))
 
 
 def main():
