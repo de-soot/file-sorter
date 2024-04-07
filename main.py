@@ -1,5 +1,5 @@
 from os import getcwd, scandir, rename
-from os.path import splitext, exists, join, expanduser
+from os.path import splitext, join, expanduser
 
 SOURCE_DIR = getcwd()
 USER_CURRENT = expanduser("~")
