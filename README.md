@@ -1,4 +1,4 @@
-# File Sorter (WIP)
+# File Sorter
 A simple Python script that cleans up messy files and sorts them into organised folders.
 
 ## Usage
