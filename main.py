@@ -41,17 +41,17 @@ FOLDERS = [
             {"file_extension": ".avi", "folder_path": "Videos"}]
 
 SOURCE_DIR = getcwd()
+print(SOURCE_DIR)
 USER_CURRENT = expanduser("~")
+print(USER_CURRENT)
 
 
 def sort_files(file_path, file_name, file_extension):
-    file_path_new = USER_CURRENT
-    for dictionary in FOLDERS:
-        if file_extension == dictionary["file_extension"]:
-            file_path_new = join(USER_CURRENT, dictionary["folder_path"])
-            break
-
-    print(file_path_new)
+    print(file_extension)
+    # for dictionary in FOLDERS:
+    #     if file_extension == dictionary["file_extension"]:
+    #         file_path_new = join(USER_CURRENT, dictionary["folder_path"])
+    #         break
 
 
 def main():
