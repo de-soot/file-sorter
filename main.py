@@ -17,41 +17,27 @@ FOLDERS = [
             {"file_extension": ".flac", "folder_path": "Music"},
             {"file_extension": ".aac", "folder_path": "Music"},
             {"file_extension": ".aiff", "folder_path": "Music"},
-            {"file_extension": ".aif", "folder_path": "Music"},
-            {"file_extension": ".aifc", "folder_path": "Music"},
-            {"file_extension": ".au", "folder_path": "Music"},
-            {"file_extension": ".snd", "folder_path": "Music"},
-            {"file_extension": ".l16", "folder_path": "Music"},
-            {"file_extension": ".pcm", "folder_path": "Music"},
-            {"file_extension": ".ape", "folder_path": "Music"},
-            {"file_extension": ".wv", "folder_path": "Music"},
-            {"file_extension": ".wma", "folder_path": "Music"},
             {"file_extension": ".ogg", "folder_path": "Music"},
-            {"file_extension": ".mpc", "folder_path": "Music"},
-            {"file_extension": ".mp+", "folder_path": "Music"},
-            {"file_extension": ".mpp", "folder_path": "Music"},
             {"file_extension": ".mp4", "folder_path": "Videos"},
-            {"file_extension": ".m4v", "folder_path": "Videos"},
             {"file_extension": ".mov", "folder_path": "Videos"},
-            {"file_extension": ".wmv", "folder_path": "Videos"},
             {"file_extension": ".webm", "folder_path": "Videos"},
-            {"file_extension": ".ogv", "folder_path": "Videos"},
             {"file_extension": ".gif", "folder_path": "Videos"},
-            {"file_extension": ".gifv", "folder_path": "Videos"},
             {"file_extension": ".avi", "folder_path": "Videos"}]
 
 SOURCE_DIR = getcwd()
-print(SOURCE_DIR)
 USER_CURRENT = expanduser("~")
-print(USER_CURRENT)
 
 
 def sort_files(file_path, file_name, file_extension):
-    print(file_extension)
-    # for dictionary in FOLDERS:
-    #     if file_extension == dictionary["file_extension"]:
-    #         file_path_new = join(USER_CURRENT, dictionary["folder_path"])
-    #         break
+    file_path_new = None
+    for dictionary in FOLDERS:
+        if file_extension == dictionary["file_extension"]:
+            file_path_new = join(USER_CURRENT, dictionary["folder_path"])
+            break
+
+    if file_path_new != None:
+        print(file_path_new)
+
 
 
 def main():
