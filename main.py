@@ -38,30 +38,27 @@ FOLDERS = [
             {"file_extension": ".ogv", "folder_path": "Videos"},
             {"file_extension": ".gif", "folder_path": "Videos"},
             {"file_extension": ".gifv", "folder_path": "Videos"},
-            {"file_extension": ".avi", "folder_path": "Videos"},]
+            {"file_extension": ".avi", "folder_path": "Videos"}]
 
 SOURCE_DIR = getcwd()
 USER_CURRENT = expanduser("~")
 
 
 def sort_files(file_path, file_name, file_extension):
+    file_path_new = USER_CURRENT
     for dictionary in FOLDERS:
-        if file_extension != dictionary["file_extension"]:
-            continue
+        if file_extension == dictionary["file_extension"]:
+            file_path_new = join(USER_CURRENT, dictionary["folder_path"])
+            break
 
-        file_path_new = join(USER_CURRENT, dictionary["folder_path"])
-        break
-
-    print(file_path, file_name, file_extension, file_path_new, SOURCE_DIR, USER_CURRENT)
+    print(file_path_new)
 
 
 def main():
     for file in scandir(SOURCE_DIR):
-        if not file.is_file():
-            continue
-
-        file_tuple = splitext(file)
-        sort_files(file_tuple[0], file.name, file_tuple[1])
+        if file.is_file():
+            file_tuple = splitext(file)
+            sort_files(file_tuple[0], file.name, file_tuple[1])
 
 
 if __name__ == "__main__":
