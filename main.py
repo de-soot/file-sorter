@@ -39,7 +39,6 @@ def sort_files(file_path, file_name, file_extension):
         print(file_path_new)
 
 
-
 def main():
     for file in scandir(SOURCE_DIR):
         if file.is_file():
