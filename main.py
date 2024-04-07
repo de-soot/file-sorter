@@ -1,6 +1,9 @@
 from os import getcwd, scandir, rename
 from os.path import splitext, exists, join, expanduser
 
+SOURCE_DIR = getcwd()
+USER_CURRENT = expanduser("~")
+
 FOLDERS = [
             {"file_extension": ".txt", "folder_path": "Documents"},
             {"file_extension": ".pdf", "folder_path": "Documents"},
@@ -23,9 +26,6 @@ FOLDERS = [
             {"file_extension": ".webm", "folder_path": "Videos"},
             {"file_extension": ".gif", "folder_path": "Videos"},
             {"file_extension": ".avi", "folder_path": "Videos"}]
-
-SOURCE_DIR = getcwd()
-USER_CURRENT = expanduser("~")
 
 
 def sort_files(file_path, file_name, file_extension):
