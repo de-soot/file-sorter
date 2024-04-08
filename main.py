@@ -37,7 +37,7 @@ FOLDERS = [
             {"file_extension": ".avi", "folder_path": VIDEOS}]
 
 
-def sort_files(file_path, file_name, file_extension):
+def sort_files(file_path: str, file_name: str, file_extension: str) -> None:
     file_path_new = None
     for dictionary in FOLDERS:
         if file_extension == dictionary["file_extension"]:
@@ -48,7 +48,7 @@ def sort_files(file_path, file_name, file_extension):
         rename((file_path + file_extension), join(file_path_new, file_name))
 
 
-def main():
+def main() -> None:
     for file in scandir(SOURCE_DIR):
         if file.is_file():
             file_tuple = splitext(file)
