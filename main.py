@@ -4,9 +4,8 @@ from os.path import splitext, exists, join, expanduser
 SOURCE_DIR = getcwd()
 CURRENT_USER = expanduser("~")
 
-# default folder destinations (should work for most people but can change to wherever)
-# e.g.:
-# DOCUMENTS = "D:\Users\user\Documents"
+# default folder destinations (should work for most people but can be changed)
+# e.g.: `DOCUMENTS = "D:\Users\user\Documents"`
 DOCUMENTS = join(CURRENT_USER, "Documents")
 PICTURES = join(CURRENT_USER, "Pictures")
 MUSIC = join(CURRENT_USER, "Music")
