@@ -5,9 +5,10 @@ A simple Python script that cleans up messy files and organises them into sorted
 `python3` (>=3.0.0)
 
 ## Usage
-Download and run `main.py` in the directory that you want to clean up. E.g.:
+[Download](https://github.com/de-soot/file-sorter/releases/latest) and run `main.py` in the directory that you want to clean up. For example:
 ```
-~/Desktop $ python3 main.py
+cd ~/Desktop
+python3 main.py
 ```
 
 ### Note
