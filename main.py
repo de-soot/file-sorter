@@ -1,7 +1,7 @@
 from os import getcwd, scandir, rename
 from os.path import splitext, exists, join, expanduser
 
-SOURCE_DIR = getcwd()
+SOURCE_DIR = getcwd() # get current working directory
 CURRENT_USER = expanduser("~")
 
 # default folder destinations (should work for most people but can be changed)
