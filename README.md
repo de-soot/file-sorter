@@ -6,7 +6,7 @@ A simple Python script that cleans up messy files and organises them into sorted
 
 ## Usage
 [Download](https://github.com/de-soot/file-sorter/releases/latest) and run `main.py` in the directory that you want to clean up. For example:
-```
+```sh
 cd ~/Desktop
 python3 main.py
 ```
